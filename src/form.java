@@ -10,13 +10,14 @@ public class form {
     private JTextField txtNombre;
     private JTextField txtCelular;
     private JTextField txtCorreo;
-    private JTextField txtCarrera;
     private JButton insertarDatosButton;
     private JButton mostrarDatosButton;
     private JButton buscarButton;
     private JButton actualizarButton;
     private JTextField textGenero;
     private JButton eliminarButton;
+    private JComboBox txtGenero;
+    private JTextField textCarrera;
     private PreparedStatement ps;
 
     public form(){
@@ -48,7 +49,7 @@ public class form {
                         ps.setString(2, txtNombre.getText());
                         ps.setString(3, txtCelular.getText());
                         ps.setString(4, txtCorreo.getText());
-                        ps.setString(5, txtCarrera.getText());
+                        ps.setString(5, textCarrera.getText());
                         ps.setString(6, textGenero.getText());
 
                     }catch (SQLException es){
@@ -92,7 +93,7 @@ public class form {
                             ps.setString(2, txtNombre.getText());
                             ps.setString(3, txtCelular.getText());
                             ps.setString(4, txtCorreo.getText());
-                            ps.setString(5, txtCarrera.getText());
+                            ps.setString(5, textCarrera.getText());
                             ps.setString(6, textGenero.getText());
                         }
 
@@ -184,7 +185,7 @@ public class form {
                                 txtNombre.setText(rs.getString("nombre"));
                                 txtCelular.setText(rs.getString("celular"));
                                 txtCorreo.setText(rs.getString("correo"));
-                                txtCarrera.setText(rs.getString("carrera"));
+                               // txtCarrera.setText(rs.getString("carrera"));
                                 textGenero.setText(rs.getString("genero"));
                             }else{
                                 System.out.println("Error no funicona");
